@@ -148,8 +148,8 @@ props = {
 
     'mesh_dir': StringProperty(
         name = "", 
-        # default = "/home/ubuntu/fa3ds/user_study/models"
-        default = "/home/ubuntu/fa3ds/video"
+        # default = "C:\\Users\\ymtmy\\git\\Style2Fab/user_study/models"
+        default = "C:\\Users\\ymtmy\\git\\Style2Fab\\meshes"
     ),
 
     'face_count': IntProperty(

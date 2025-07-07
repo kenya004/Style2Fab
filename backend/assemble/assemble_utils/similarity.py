@@ -5,8 +5,8 @@ import shlex, subprocess
 from io import BytesIO
 
 ### Global Constants ###
-reeb_graph = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/reeb_graph"
-models_dir = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/models"
+reeb_graph = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/reeb_graph"
+models_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/models"
 wrl_header = \
 """
 #VRML V2.0 utf8
@@ -232,21 +232,21 @@ def _save_as_wrl(faces, vertices, path):
     # print("--- Done ---")
 
 if __name__ == "__main__":
-    # mesh_path_1 = "/home/ubuntu/fa3ds/backend/results/study_models/component_0_model_15/segment_0.0/segment_0.0.obj"
-    # mesh_path_2 = "/home/ubuntu/fa3ds/backend/results/study_models/component_0_model_15/segment_1.0/segment_1.0.obj"
-    # mesh_path_3 = "/home/ubuntu/fa3ds/backend/results/study_models/component_0_model_15/segment_2.0/segment_2.0.obj"
-    # mesh_path_4 = "/home/ubuntu/fa3ds/backend/results/study_models/component_0_model_15/segment_3.0/segment_3.0.obj"
-    # mesh_path_5 = "/home/ubuntu/fa3ds/backend/results/study_models/component_0_model_15/segment_4.0/segment_4.0.obj"
-    # mesh_path_6 = "/home/ubuntu/fa3ds/backend/results/study_models/component_0_model_15/segment_5.0/segment_5.0.obj"
-    # mesh_path_7 = "/home/ubuntu/fa3ds/backend/results/study_models/component_0_model_15/segment_6.0/segment_6.0.obj"
-    # mesh_path_8 = "/home/ubuntu/fa3ds/backend/results/study_models/component_0_model_15/segment_7.0/segment_7.0.obj"
-    # mesh_path_9 = "/home/ubuntu/fa3ds/backend/results/study_models/component_0_model_15/segment_8.0/segment_8.0.obj"
-    alpaca = "/home/ubuntu/fa3ds/backend/results/user_study/alpaca"
-    cat = "/home/ubuntu/fa3ds/backend/results/user_study/cat"
-    fillacutter = "/home/ubuntu/fa3ds/backend/results/user_study/fillacutter_base"
-    horse = "/home/ubuntu/fa3ds/backend/results/user_study/horse"
+    # mesh_path_1 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/study_models/component_0_model_15/segment_0.0/segment_0.0.obj"
+    # mesh_path_2 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/study_models/component_0_model_15/segment_1.0/segment_1.0.obj"
+    # mesh_path_3 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/study_models/component_0_model_15/segment_2.0/segment_2.0.obj"
+    # mesh_path_4 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/study_models/component_0_model_15/segment_3.0/segment_3.0.obj"
+    # mesh_path_5 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/study_models/component_0_model_15/segment_4.0/segment_4.0.obj"
+    # mesh_path_6 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/study_models/component_0_model_15/segment_5.0/segment_5.0.obj"
+    # mesh_path_7 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/study_models/component_0_model_15/segment_6.0/segment_6.0.obj"
+    # mesh_path_8 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/study_models/component_0_model_15/segment_7.0/segment_7.0.obj"
+    # mesh_path_9 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/study_models/component_0_model_15/segment_8.0/segment_8.0.obj"
+    alpaca = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/user_study/alpaca"
+    cat = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/user_study/cat"
+    fillacutter = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/user_study/fillacutter_base"
+    horse = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/user_study/horse"
     
-    log = "/home/ubuntu/fa3ds/backend/results/user_study/similarity.csv"
+    log = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/user_study/similarity.csv"
     meshes = [fillacutter, alpaca, cat, horse]
     for mesh in meshes:
         components = []

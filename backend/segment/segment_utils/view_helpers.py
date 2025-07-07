@@ -42,8 +42,8 @@ colors = [
     {"centroid": "red", "points": "blue"},
     {"centroid": "red", "points": "blue"},
 ]
-results_dir = "/home/ubuntu/fa3ds/backend/results"
-default_models_dir = "/home/ubuntu/fa3ds/backend/assemble/Experiments/Planter/segmented"
+results_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results"
+default_models_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/Experiments/Planter/segmented"
 report = lambda error: f"\033[31m----------------------------\n{error}\n----------------------------\033[0m\n"
 
 # @timeout(300)
@@ -370,11 +370,11 @@ def batch_seg(meshes):
                     # _construct_dir(res_dir)
 
                     segment_mesh(mesh, None, collapsed = collapsed, parallelize = False, extract = True, parent_dir = component_dir, mesh_dir = component_dir)
-                    with open("/home/ubuntu/fa3ds/backend/segment/segment_utils/auto_segmented_test.txt", "a") as segmented:
+                    with open("C:\\Users\\ymtmy\\git\\Style2Fab/backend/segment/segment_utils/auto_segmented_test.txt", "a") as segmented:
                         segmented.write(f"{component_dir}\n") 
                             
                 except Exception as error:
-                    with open("/home/ubuntu/fa3ds/backend/segment/segment_utils/auto_skipped_test.txt", "a") as skipped:
+                    with open("C:\\Users\\ymtmy\\git\\Style2Fab/backend/segment/segment_utils/auto_skipped_test.txt", "a") as skipped:
                         skipped.write(f"model_{component_dir.split('_')[-1]}\n")
                     if "info.csv" not in os.listdir(component_dir): _remove_dir(component_dir)
                     print(report(f"{traceback.format_exc()}\nSegmentation failed :("))
@@ -384,9 +384,9 @@ def batch_seg(meshes):
             _remove_dir(mesh_save_dir)
    
 if __name__ == "__main__":
-    mesh_base_dir = "/home/ubuntu/fa3ds/backend/assemble/Experiments/Planter/models"
+    mesh_base_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/Experiments/Planter/models"
 
-    meshes = [["/home/ubuntu/fa3ds/backend/assemble/Experiments/Planter/models", ([25000], "segmented_new")]]
+    meshes = [["C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/Experiments/Planter/models", ([25000], "segmented_new")]]
     # for _, mesh_dirs, files in os.walk(mesh_base_dir):
     #     for mesh_dir in mesh_dirs:
     #         mesh_name, mesh_ext = os.path.splitext(mesh_dir)

@@ -62,9 +62,9 @@ if __name__ == "__main__":
     mesh_editor = MeshEditor()
 
     stl_paths = [
-        '/home/ubuntu/fa3ds/backend/segment/segment_utils/models/base.stl', 
-        '/home/ubuntu/fa3ds/backend/segment/segment_utils/models/knob.stl',
-        '/home/ubuntu/fa3ds/backend/segment/segment_utils/models/pinch.stl'
+        'C:\\Users\\ymtmy\\git\\Style2Fab/backend/segment/segment_utils/models/base.stl', 
+        'C:\\Users\\ymtmy\\git\\Style2Fab/backend/segment/segment_utils/models/knob.stl',
+        'C:\\Users\\ymtmy\\git\\Style2Fab/backend/segment/segment_utils/models/pinch.stl'
     ]
     
     for model_path in stl_paths:

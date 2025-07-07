@@ -2,7 +2,7 @@
 stylize views
 """
 import json
-import clip
+import open_clip as clip
 import pymeshlab
 import numpy as np
 from rest_framework import status
@@ -17,7 +17,13 @@ from .stylize_utils.view_helpers import _remesh
 
 ### Global Constants ###
 print("Loading CLIP ...")
-clip_model, preprocess = clip.load('ViT-B/32', device, jit=False)
+
+clip_model, _, preprocess = clip.create_model_and_transforms(
+    model_name='ViT-B-32',
+    pretrained='laion2b_s34b_b79k',
+    device=device,
+    jit=False
+)
 
 @api_view(['POST'])
 def stylize(request, *args, **kwargs):

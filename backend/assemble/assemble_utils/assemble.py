@@ -32,7 +32,7 @@ colors = {
     23: ["gold II", (1.0, 0.8431372549019608, 0.0, 1)],
     24: ["gold III", (1.0, 0.8431372549019608, 0.0, 1)],
 }
-models_dir = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/models"
+models_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/models"
 replace_mult = lambda s, replaced, replacee: s.replace(replaced[0], replacee[0]) if len(replaced) == 1 else replace_mult(s.replace(replaced[0], replacee[0]), replaced[1:], replacee[1:])
 
 def assemble(mesh_set, mesh_name = "assembled", save = False):
@@ -108,19 +108,19 @@ def generate_power_set(mesh_set):
     return power_mesh_set
 
 if __name__ == "__main__":
-    mesh_path_0 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_0.obj"
-    mesh_path_1 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_1.obj"
-    mesh_path_2 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_2.obj"
-    mesh_path_3 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_3.obj"
-    mesh_path_4 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_4.obj"
-    mesh_path_5 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_5.obj"
-    mesh_path_6 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_6.obj"
-    mesh_path_7 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_7.obj"
-    mesh_path_8 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_8.obj"
-    mesh_path_9 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_9.obj"
-    mesh_path_10 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_10.obj"
-    mesh_path_11 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_11.obj"
-    mesh_path_12 = "/home/ubuntu/fa3ds/backend/assemble/assemble_utils/cat/model_12.obj"
+    mesh_path_0 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_0.obj"
+    mesh_path_1 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_1.obj"
+    mesh_path_2 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_2.obj"
+    mesh_path_3 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_3.obj"
+    mesh_path_4 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_4.obj"
+    mesh_path_5 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_5.obj"
+    mesh_path_6 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_6.obj"
+    mesh_path_7 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_7.obj"
+    mesh_path_8 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_8.obj"
+    mesh_path_9 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_9.obj"
+    mesh_path_10 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_10.obj"
+    mesh_path_11 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_11.obj"
+    mesh_path_12 = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/assemble/assemble_utils/cat/model_12.obj"
 
     ms = pymeshlab.MeshSet()
     ms.load_new_mesh(mesh_path_0)

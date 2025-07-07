@@ -47,7 +47,10 @@ def fetch(self, context, i):
 
     data = json.dumps({'i': i, 'mesh_dir': mesh_dir})
     try:
+
+        self.report({'INFO'}, f"[fetch] POST {url} with data: {data}")
         response = requests.post(url = url, json = data).json()
+        self.report({'INFO'}, f"[fetch] response: {response}")
         
         failed = response['failed']
         meshIds = response['meshIds']
@@ -56,7 +59,7 @@ def fetch(self, context, i):
         num_meshes = response['numMeshes']
         vertices_list = response['vertices']
         face_segments_list = response['face_segments']
-        self.report({'INFO'}, f"Loaded mesh successfully!")
+        self.report({'INFO'}, f"Loaded mesh successfully! num_meshes={num_meshes}, meshIds={meshIds}")
 
         context.scene.i = i 
         context.scene.num_meshes = num_meshes
@@ -68,9 +71,13 @@ def fetch(self, context, i):
             self.report({'INFO'}, f"No more meshes inside directory {mesh_dir}")
             return {'FINISHED'}
 
+        self.report({'INFO'}, f"[fetch] Removing old meshes: {context.scene.loaded}")
         for name in context.scene.loaded.split(","): 
-            try: remove_mesh(self, name)
-            except: continue
+            try: 
+                remove_mesh(self, name)
+            except Exception as e: 
+                self.report({'WARNING'}, f"Failed to remove mesh {name}: {e}")
+                continue
 
         context.scene.loaded = ""
         for i in range(len(meshIds)):
@@ -81,6 +88,7 @@ def fetch(self, context, i):
             face_segments = face_segments_list[i]
 
             mesh_name = f"{meshId.split('/')[-1]}"
+            self.report({'INFO'}, f"[fetch] Processing mesh: {mesh_name}, vertices={len(vertices)}, faces={len(faces)}")
             context.scene.loaded += f"{mesh_name}"
             if i < len(meshId) - 1: context.scene.loaded += ","
             # Remove old mesh   
@@ -90,9 +98,11 @@ def fetch(self, context, i):
 
             # Add new mesh
             new_object = add_mesh(self, mesh_name, vertices, faces)
+            self.report({'INFO'}, f"[fetch] Added mesh object: {new_object.name}")
 
             if face_segments is not None:
                 k = len(set(face_segments))
+                self.report({'INFO'}, f"[fetch] Assigning materials: k={k}, face_segments={face_segments}")
 
                 for stored_models in context.scene.models: 
                     if stored_models.name == mesh_name.lower(): 

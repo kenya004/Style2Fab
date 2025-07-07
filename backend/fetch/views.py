@@ -20,7 +20,7 @@ from segment.segment_utils.reconstruct import reconstruct_mesh
 
 #### Global Constant ####
 component = "component"
-model_dir = "/home/ubuntu/fa3ds/backend/segment/segment_utils/models"
+model_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/segment/segment_utils/models"
 default_labels = [
     "function", "function", "form", "function", "function", "form", "function", "form", "form", "function", "form", "function", 
     "function", "function", "form", "function", "function", "form", "function", "form", "form", "function", "form", "function",
@@ -52,11 +52,27 @@ def fetch(request, *args, **kwargs):
         meshes, meshes_found, face_segments_list, labels, num_meshes = [], [], [], [default_labels], 0
 
         try:
-            meshes, meshes_found, face_segments_list, labels, num_meshes = _find_mesh(mesh_dir, i)
+            _, meshes_found, face_segments_list, labels, num_meshes = _find_mesh(mesh_dir, i)
         except Exception as error: print(report(f"failed on {mesh_dir}\n{traceback.format_exc()}"))
 
+        meshes = []
+        for mesh_path in meshes_found:
+            ms = pymeshlab.MeshSet()
+            ms.load_new_mesh(mesh_path)
+            mesh = ms.current_mesh()
+            meshes.append(mesh)
+            
         faces = [list(mesh.face_matrix()) for mesh in meshes]
         vertices = [list(mesh.vertex_matrix()) for mesh in meshes]
+
+        print(f"Meshes found: {meshes}")
+        for mesh in meshes:
+            print(f"  Vertices: {mesh.vertex_number()}")
+            print(f"  Faces: {mesh.face_number()}")
+            if mesh.vertex_number() > 0:
+                print(f"  First vertex: {mesh.vertex_matrix()[0]}")
+            if mesh.face_number() > 0:
+                print(f"  First face: {mesh.face_matrix()[0]}")
         # if face_segments is not None: 
         #     face_segments = list(face_segments)
 
@@ -69,7 +85,8 @@ def fetch(request, *args, **kwargs):
         data['failed'] = True if len(meshes) == 0 else False
         print(f"[numMeshes] >> {data['numMeshes']}")
         print(f"[labels] >> {len(labels)} {labels}")
-        
+        print(f'[faces] >> {len(faces)} {faces[0] if len(faces) > 0 else "No faces found"}')
+        print(f'[vertices] >> {len(vertices)} {vertices[0] if len(vertices) > 0 else "No vertices found"}')
     return Response(data = data, status = fetch_status)
 
 ### Helper Functions ###
@@ -79,9 +96,11 @@ def _find_mesh(mesh_dir, i):
     labels_list = []
     meshes_found = []
     face_segments_list = []
+
     for file in os.listdir(mesh_dir): 
+        
         mesh_path = f"{mesh_dir}/{file}"
-        # print(f"Checking {mesh_path} ...")
+        print(f"Checking {mesh_path} ...")
 
         if os.path.isfile(mesh_path):
             mesh_name, mesh_ext = os.path.splitext(mesh_path)
@@ -93,7 +112,14 @@ def _find_mesh(mesh_dir, i):
                 ms = pymeshlab.MeshSet()
                 ms.load_new_mesh(mesh_path)
                 mesh = ms.current_mesh()
-                print(f"Found mesh at {mesh_path}!")
+
+                print(f"Loaded mesh: {mesh_path}")
+                print(f"  Vertices: {mesh.vertex_number()}")
+                print(f"  Faces: {mesh.face_number()}")
+                if mesh.vertex_number() > 0:
+                    print(f"  First vertex: {mesh.vertex_matrix()[0]}")
+                if mesh.face_number() > 0:
+                    print(f"  First face: {mesh.face_matrix()[0]}")
 
                 meshes.append(mesh)
                 labels_list.append(default_labels)

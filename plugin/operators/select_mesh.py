@@ -33,7 +33,7 @@ class Load_Cat(bpy.types.Operator):
     """ Moves to next mesh """
 
     bl_idname = "load.cat"
-    bl_label = "Planter"
+    bl_label = "Cat"
     
     @classmethod
     def poll(cls, context):
@@ -56,7 +56,7 @@ class Load_Headphones(bpy.types.Operator):
     """ Moves to next mesh """
 
     bl_idname = "load.headphones"
-    bl_label = "Cat"
+    bl_label = "Headphones"
     
     @classmethod
     def poll(cls, context):
@@ -80,7 +80,7 @@ class Load_Planter(bpy.types.Operator):
     """ Moves to next mesh """
 
     bl_idname = "load.planter"
-    bl_label = "Headphones"
+    bl_label = "Planter"
     
     @classmethod
     def poll(cls, context):

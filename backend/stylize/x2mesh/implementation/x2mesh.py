@@ -1,12 +1,18 @@
-import clip
+import open_clip as clip
 import argparse
 from main import x2mesh
 from utils import device
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    clip_model, preprocess = clip.load('ViT-B/32', device, jit=False)
-    
+
+    clip_model, _, preprocess = clip.create_model_and_transforms(
+        model_name='ViT-B-32',
+        pretrained='laion2b_s34b_b79k',
+        device=device,
+        jit=False
+    )
+
     ### render settings
     parser.add_argument('--n_views', type=int, default=5)
 

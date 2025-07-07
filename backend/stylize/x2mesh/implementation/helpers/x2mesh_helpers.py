@@ -1,5 +1,5 @@
 import os
-import clip
+import open_clip as clip
 import torch
 import random 
 import numpy as np

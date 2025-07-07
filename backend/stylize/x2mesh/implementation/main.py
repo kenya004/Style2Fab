@@ -1,4 +1,4 @@
-import clip
+import open_clip as clip
 import torch
 from tqdm import tqdm
 from copy import deepcopy
