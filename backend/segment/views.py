@@ -18,7 +18,7 @@ from .segment_utils.view_helpers import segment_mesh, _remesh, extract_segments
 sys.setrecursionlimit(10000)
 
 ### Global Constants ###
-default_models_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/"
+default_models_dir = "C:\\Users\\mrkab\\git\\Style2Fab/backend/results/"
 
 @api_view(['POST'])
 def segment(request, *args, **kwargs):

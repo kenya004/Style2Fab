@@ -17,8 +17,8 @@ from rest_framework.decorators import api_view
 from .assemble_utils.similarity import similarity
 
 ### Global Constants ###
-all_similarity = "C:\\Users\\ymtmy\\git\\Style2Fab/user_study/models/similarity.csv"
-default_models_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/segmented_models"
+all_similarity = "C:\\Users\\mrkab\\git\\Style2Fab/user_study/models/similarity.csv"
+default_models_dir = "C:\\Users\\mrkab\\git\\Style2Fab/backend/results/segmented_models"
 
 @api_view(['POST'])
 def assemble(request, *args, **kwargs):

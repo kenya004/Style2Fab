@@ -95,5 +95,5 @@ def reconstruct_mesh(path, mesh_name = "reconstructed_mesh"):
     return new_mesh, face_segments
 
 if __name__ == "__main__":
-    mesh_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/api_segmented_models/model_0/8_segmentation"
+    mesh_dir = "C:\\Users\\mrkab\\git\\Style2Fab/backend/results/api_segmented_models/model_0/8_segmentation"
     new_mesh, face_segments = reconstruct_mesh(mesh_dir, mesh_name = "reconstructed_mesh")

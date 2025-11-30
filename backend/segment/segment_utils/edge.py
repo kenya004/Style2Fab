@@ -76,7 +76,7 @@ def edge_collapse(mesh, face_count):
     return mesh
 
 # if __name__ == "__main__":
-#     mesh_path = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/segment/segment_utils/ui_models/vase.obj"
+#     mesh_path = "C:\\Users\\mrkab\\git\\Style2Fab/backend/segment/segment_utils/ui_models/vase.obj"
 #     ms = pymeshlab.MeshSet()
 #     ms.load_new_mesh(mesh_path)
 #     mesh = ms.current_mesh()

@@ -15,7 +15,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 ### Global Constants ###
-default_models_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/results/"
+default_models_dir = "C:\\Users\\mrkab\\git\\Style2Fab/backend/results/"
 
 @api_view(['POST'])
 def annotate(request, *args, **kwargs):

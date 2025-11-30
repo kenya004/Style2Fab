@@ -20,7 +20,7 @@ from segment.segment_utils.reconstruct import reconstruct_mesh
 
 #### Global Constant ####
 component = "component"
-model_dir = "C:\\Users\\ymtmy\\git\\Style2Fab/backend/segment/segment_utils/models"
+model_dir = "C:\\Users\\mrkab\\git\\Style2Fab/backend/segment/segment_utils/models"
 default_labels = [
     "function", "function", "form", "function", "function", "form", "function", "form", "form", "function", "form", "function", 
     "function", "function", "form", "function", "function", "form", "function", "form", "form", "function", "form", "function",
